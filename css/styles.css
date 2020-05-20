@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  margin-bottom: 45px;
+}
+.app {
+  width: 100%;
+  height: 100vh;
+  padding: 25px 15px;
+  overflow: hidden;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.pop-up__await-geolocation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #FAFAFA;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 1000;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+.pop-up__await-geolocation .loader {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  margin-top: 30px;
+  opacity: 1;
+  animation: loader 1s linear infinite;
+}
+@keyframes loader {
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+[class$="temp"]::after,
+[class$="temp-day-value"]::after,
+[class$="temp-night-value"]::after {
+  content: '°';
+}
+.daily-weather {
+  width: 100%;
+}
+.daily-weather__carousel {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.daily-weather__carousel-item {
+  width: 115px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.daily-weather__carousel-item-img {
+  max-height: 9vh;
+}
+.daily-weather__carousel-item-img img {
+  max-height: inherit;
+}
+.daily-weather__info {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.daily-weather__day-name {
+  color: #777;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.daily-weather__date {
+  font-size: 12px;
+  color: #777;
+}
+.daily-weather__temp-info {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.daily-weather__temp-info span {
+  font-size: 12px;
+}
+.daily-weather__temp-info-day-value,
+.daily-weather__temp-info-night-value {
+  font-size: 14px;
+}
+.daily-weather__temp-day {
+  margin-right: 15px;
+}
+.current-weather {
+  text-align: center;
+  width: 100%;
+}
+.current-weather__inner {
+  height: 100%;
+}
+.current-weather .city-name {
+  margin-bottom: 5px;
+  font-size: 35px;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+.current-weather .tooday-info {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+.current-weather .tooday-info span + span {
+  margin-left: 20px;
+}
+.current-weather__main-image {
+  max-height: 20vh;
+}
+.current-weather__main-image img {
+  max-height: inherit;
+}
+.current-weather__info {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 15px;
+}
+.current-weather__description {
+  color: #777;
+}
+.current-weather__temp {
+  font-size: 50px;
+}
+.hourly-weather {
+  width: 100%;
+}
+.hourly-weather__carousel-wrapper {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.hourly-weather__carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+.hourly-weather__carousel-item-img {
+  height: 10vh;
+}
+.hourly-weather__carousel-item-img img {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hourly-weather__temp {
+  font-size: 20px;
+  margin-top: auto;
+}
+.hourly-weather__time {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+@media (max-width: 770px) {
+  .app {
+    padding: 10px;
+  }
+  .pop-up__await-geolocation {
+    font-size: 16px;
+  }
+  .daily-weather__carousel-item-img {
+    max-height: 8vh;
+  }
+  .daily-weather__day-name {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .current-weather .city-name {
+    font-size: 24px;
+  }
+  .current-weather__info {
+    margin-top: 5px;
+  }
+  .current-weather__description {
+    font-size: 14px;
+  }
+  .current-weather__temp {
+    font-size: 30px;
+  }
+  .hourly-weather h3 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  .hourly-weather__carousel-item-img {
+    height: 8vh;
+  }
+}
+.owl-carousel .owl-item {
+  display: flex;
+  justify-content: center;
+}
+.owl-carousel .owl-item img {
+  width: auto;
+}
